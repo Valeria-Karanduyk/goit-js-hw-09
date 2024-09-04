@@ -1,4 +1,8 @@
 'use strict';
+
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -85,3 +89,9 @@ const x = images.map(image => {
 
 selectGallery.append(...x);
 console.log(selectGallery);
+
+let $gallery = new SimpleLightbox('.gallery a', {
+  caption: true,
+  captionDelay: 250,
+  captionsData: 'alt',
+});
